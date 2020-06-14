@@ -1,0 +1,40 @@
+# Note: .gitignore file executes the commands in order from top to bottom, the later commands will overwrite the previous commands
+
+################################################
+# ignore all files and dirs
+*
+
+# unignore all dirs
+!*/
+
+# unignore specific files with following extensions
+!*.cpp
+!*.py
+!*.java
+!*.txt
+!*.md
+!*.png
+!*.pdf
+!*.zip
+!*.jpeg
+!*.jpg
+!*.html
+!*.docx
+!*.tex
+!*.ipynb
+!*.bat
+!LICENSE
+
+
+############ ignore specific folders ############
+# Begin with a / : only ignore in the current directory
+# End with a / : this is a dir
+
+# ignore the specific dir only in the current directory excluding subdir 
+#Folder23/
+
+# ignore all the .history dir including subdir
+#.history/
+
+# unignore specific dir, not including subdir  
+# !/Folder6/
