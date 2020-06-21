@@ -201,6 +201,20 @@ void removeElement(ListNode** head,ListNode* pDelete){
         }
 }
 
+//翻转链表
+void reverseListTable(ListNode** head){
+        if(head&&*head) {
+                ListNode* cur=*head,*pre=NULL,*next=NULL;
+                while(cur) {
+                        next = cur->nt;
+                        cur->nt=pre;
+                        pre = cur;
+                        cur=next;
+                }
+                *head=pre;
+        }
+}
+
 int main(int argc, char const *argv[]) {
         int arr[] = {1,2,6,1,7,11,8,14};
         ListNode* listTable = makeList(arr,0,7);
@@ -211,13 +225,19 @@ int main(int argc, char const *argv[]) {
         //reverselyPrintListTable(listTable);
         //reverselyPrintListTable2(listTable);
         /*
-        removeFirst(&listTable,11);
+           removeFirst(&listTable,11);
+           printListTable(listTable);
+           removeFirst(&listTable,1);
+           printListTable(listTable);
+         */
+        /*
+           printListTable(listTable);
+           removeElement(&listTable,listTable);
+           printListTable(listTable);
+         */
+
         printListTable(listTable);
-        removeFirst(&listTable,1);
-        printListTable(listTable);
-        */
-        printListTable(listTable);
-        removeElement(&listTable,listTable);
+        reverseListTable(&listTable);
         printListTable(listTable);
         freeListTable(listTable);
 
